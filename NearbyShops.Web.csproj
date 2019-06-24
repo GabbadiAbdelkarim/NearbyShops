@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="NearbyShops.Domain\bin\**" />
+    <Compile Remove="NearbyShops.Domain\obj\**" />
+    <Compile Remove="NearbyShops.Infrastructure\bin\**" />
+    <Compile Remove="NearbyShops.Infrastructure\obj\**" />
+    <Compile Remove="NearbyShops.Middle\bin\**" />
+    <Compile Remove="NearbyShops.Middle\obj\**" />
+    <Content Remove="NearbyShops.Domain\bin\**" />
+    <Content Remove="NearbyShops.Domain\obj\**" />
+    <Content Remove="NearbyShops.Infrastructure\bin\**" />
+    <Content Remove="NearbyShops.Infrastructure\obj\**" />
+    <Content Remove="NearbyShops.Middle\bin\**" />
+    <Content Remove="NearbyShops.Middle\obj\**" />
+    <EmbeddedResource Remove="NearbyShops.Domain\bin\**" />
+    <EmbeddedResource Remove="NearbyShops.Domain\obj\**" />
+    <EmbeddedResource Remove="NearbyShops.Infrastructure\bin\**" />
+    <EmbeddedResource Remove="NearbyShops.Infrastructure\obj\**" />
+    <EmbeddedResource Remove="NearbyShops.Middle\bin\**" />
+    <EmbeddedResource Remove="NearbyShops.Middle\obj\**" />
+    <None Remove="NearbyShops.Domain\bin\**" />
+    <None Remove="NearbyShops.Domain\obj\**" />
+    <None Remove="NearbyShops.Infrastructure\bin\**" />
+    <None Remove="NearbyShops.Infrastructure\obj\**" />
+    <None Remove="NearbyShops.Middle\bin\**" />
+    <None Remove="NearbyShops.Middle\obj\**" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.4" />
+  </ItemGroup>
+
+</Project>
