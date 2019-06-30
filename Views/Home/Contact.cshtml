@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Contact";
+}
+    <link rel="stylesheet" href="~/css/Contact.css" />
+<h1>@ViewData["Title"]</h1>
+<body class="home-body">
+    <div class="c-container">
+        <form>
+
+            <label for="fname">First Name</label>
+            <input class="c-input" type="text" id="fname" name="firstname" placeholder="Your name..">
+
+            <label for="lname">Last Name</label>
+            <input class="c-input" type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+            <label for="country">Country</label>
+            <select class="c-select" id="country" name="country">
+                <option value="australia">Morocco</option>
+                <option value="canada">France</option>
+                <option value="usa">Alger</option>
+            </select>
+
+            <label for="subject">Subject</label>
+            <textarea class="c-textarea" id="subject" name="subject" placeholder="Write something.." style="height:100px"></textarea>
+
+            <input class="c-input" type="submit" value="Submit">
+
+        </form>
+    </div>
+</body>
