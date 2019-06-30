@@ -5,7 +5,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using NearbyShops.Domain;
 using NearbyShops.Infrastructure;
+using Middle = NearbyShops.Middle;
 
 namespace NearbyShops
 {
@@ -28,11 +30,13 @@ namespace NearbyShops
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddDbContext<ShopContext>(options 
                 => options.UseSqlServer(Configuration.GetConnectionString("NearbyShopConnection")));
+
+            // configure DI for application services
+            services.AddScoped<IUserMiddleService, Middle.UserMiddleSerivce>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

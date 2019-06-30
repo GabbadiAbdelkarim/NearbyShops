@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace NearbyShops.Domain.Models
+﻿namespace NearbyShops.Domain.Models
 {
     public class Shop
     {

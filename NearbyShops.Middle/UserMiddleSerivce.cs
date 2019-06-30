@@ -1,12 +1,15 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using NearbyShops.Domain;
+﻿using NearbyShops.Domain;
 using NearbyShops.Domain.Models;
 using NearbyShops.Infrastructure;
+using System.Linq;
 
 namespace NearbyShops.Middle
 {
-    public class UserMiddleSerivce : IUser
+    /// <summary>
+    /// User Middle Serivce
+    /// </summary>
+    /// <seealso cref="NearbyShops.Domain.IUserMiddleService" />
+    public class UserMiddleSerivce : IUserMiddleService
     {
         private ShopContext _context;
 
@@ -15,41 +18,21 @@ namespace NearbyShops.Middle
             _context = context;
         }
 
-        public bool DeletePrefferedShop(int idUser, int idShop)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public bool DislikeShop(int idUser, int idShop)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public IEnumerable<Shop> GetPrefferedShops(int idUser)
-        {
-            return _context.Shops;
-        }
-
-        public IEnumerable<Shop> GetShopsByDistance()
-        {
-            return _context.Shops;
-        }
-
-        public bool LikeShop(int idUser, int idShop)
-        {
-            _context.Users
-                .FirstOrDefault(o => o.UserId == idUser)
-                .PrefferedShops.Add(new Shop());
-            _context.SaveChanges();
-
-            return true;
-        }
-
+        /// <summary>
+        /// Signs in.
+        /// </summary>
+        /// <param name="login">The login.</param>
+        /// <param name="password">The password.</param>
         public bool SignIn(string login, string password)
         {
-            throw new System.NotImplementedException();
+            return _context.Users.Where(u => u.Login == login && u.Password == password).Any() == true;
         }
 
+        /// <summary>
+        /// Signs up.
+        /// </summary>
+        /// <param name="login">The login.</param>
+        /// <param name="password">The password.</param>
         public bool SignUp(string login, string password)
         {
             _context.Add(new User(login, password));
